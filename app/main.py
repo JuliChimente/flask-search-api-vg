@@ -1,10 +1,17 @@
+import os
 import csv
 from flask import Flask, request, jsonify
 
 app = Flask(__name__)
 
+
 # Rutas de archivos
-CSV_PATH = 'flask-search-api-vg/app/vibra_challenge.csv'
+csv_path = 'vibra_challenge.csv'
+
+# Construir la ruta completa del archivo CSV
+current_dir = os.path.dirname(os.path.abspath(__file__))
+csv_path_complete = os.path.join(current_dir, csv_path)
+
 
 # Ruta para la búsqueda
 @app.route('/search', methods=['GET'])
@@ -31,7 +38,7 @@ def search():
 def read_and_filter_csv(name, city):
     # Leer el archivo CSV
     try:
-        with open(CSV_PATH, 'r', encoding='utf-8-sig') as file:
+        with open(csv_path_complete, 'r', encoding='utf-8-sig') as file:
             reader = csv.reader(file)
 
             # Filtrar los datos
@@ -50,10 +57,10 @@ def read_and_filter_csv(name, city):
                         'company': row[5],
                         'city': row_city
                     })
+            return results
     except FileNotFoundError:
-        print('File not found.')
-
-    return results
+        print(f'File not found in route {csv_path_complete}')
+        return []  # Devuelve una lista vacía si se produce un error al abrir el archivo
 
 
 def format_results(results):
