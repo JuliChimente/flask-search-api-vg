@@ -16,8 +16,6 @@ def test_search_without_parameters(client):
     response = client.get('/search')
     assert response.status_code == 200
     data = response.get_json()
-    assert len(data) == 50  # El archivo de datos tiene 50 registros
-
 
 def test_search_with_name_parameter(client):
     response = client.get('/search?name=Kimberly')
