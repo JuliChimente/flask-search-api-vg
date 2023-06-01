@@ -5,6 +5,8 @@ Esta es una aplicación Flask que proporciona un API para buscar en un archivo C
 ## Requisitos
 
 - Python 3.9 o superior
+- Flask 2.3.2
+- pytest 7.3.1
 - Docker (opcional, para ejecución con contenedor)
 
 ## Configuración del entorno
@@ -12,7 +14,7 @@ Esta es una aplicación Flask que proporciona un API para buscar en un archivo C
 1. Clonar el repositorio:
 
 git clone https://github.com/JuliChimente/flask-search-api-vg.git
-cd vg-flask-api-test
+cd flask-search-api-vg
 
 2. Crear y activar un entorno virtual:
 

@@ -4,7 +4,7 @@ from flask import Flask, request, jsonify
 app = Flask(__name__)
 
 # Rutas de archivos
-CSV_PATH = 'C:/Users/julic/Desktop/vg-flask-tt/vg-flask-api-test/app/vibra_challenge.csv'
+CSV_PATH = 'flask-search-api-vg/app/vibra_challenge.csv'
 
 # Ruta para la búsqueda
 @app.route('/search', methods=['GET'])
@@ -51,8 +51,7 @@ def read_and_filter_csv(name, city):
                         'city': row_city
                     })
     except FileNotFoundError:
-        # Manejar el error adecuadamente
-        print('No fue encontrado el archivo.')
+        print('File not found.')
 
     return results
 
