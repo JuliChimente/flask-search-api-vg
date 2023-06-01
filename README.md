@@ -11,7 +11,7 @@ Esta es una aplicación Flask que proporciona un API para buscar en un archivo C
 
 1. Clonar el repositorio:
 
-git clone https://github.com/JuliChimente/vg-flask-api-test.git
+git clone https://github.com/JuliChimente/flask-search-api-vg.git
 cd vg-flask-api-test
 
 2. Crear y activar un entorno virtual:
