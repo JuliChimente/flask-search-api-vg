@@ -32,6 +32,12 @@ python -m app.main
 
 La aplicación estará disponible en http://localhost:5000/search
 
+## Ejecución de la aplicación Docker Compose
+
+docker-compose up
+
+Ejecutando este comando en la ruta que se encuentra el compose, aplicación estará disponible en http://localhost:5000/search
+
 ## Ejecución de las pruebas unitarias
 
 pytest
